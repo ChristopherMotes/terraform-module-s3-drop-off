@@ -3,5 +3,5 @@ variable bucketName {
 }
 variable bucketName {
     type = string
-    default = 'loggingbucket.imperial.galactic.gov'
+    default = "loggingbucket.imperial.galactic.gov"
 }
