@@ -5,4 +5,18 @@ resource "aws_s3_bucket" "dropOffBucket" {
         target_bucket = var.loggingBucketName
         target_prefix = "${var.bucketName}/"
     }
+    lifecycle_rule {
+        id      = "wholeBucket"
+        enabled = true
+
+
+        transition {
+            days          = 60
+            storage_class = "GLACIER"
+        }
+
+        expiration {
+            days = 90
+        }
+    }
 }
