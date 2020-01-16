@@ -1,7 +1,7 @@
 variable bucketName {
     type = string
 }
-variable bucketName {
+variable loggingBucketName {
     type = string
     default = "loggingbucket.imperial.galactic.gov"
 }
