@@ -11,12 +11,20 @@ resource "aws_s3_bucket" "dropOffBucket" {
 
 
         transition {
-            days          = 60
+            days          = 0
             storage_class = "GLACIER"
         }
 
         expiration {
-            days = 90
+            days = 360
+        }
+    }
+    
+    server_side_encryption_configuration {
+        rule {
+            apply_server_side_encryption_by_default {
+                sse_algorithm     = "aws:kms"
+            }
         }
     }
 }
