@@ -13,7 +13,7 @@ resource "aws_s3_bucket_policy" "allow_object_write" {
       "Action": "s3:PutObject",
       "Resource": "${aws_s3_bucket.dropOffBucket.arn}/*",
       "Condition": {
-            "ArnEquals": { "aws:SourceArn": var.writingResourceARN }
+            "ArnEquals": { "aws:SourceArn": "${var.writingResourceARN}" }
       }
     }
   ]
