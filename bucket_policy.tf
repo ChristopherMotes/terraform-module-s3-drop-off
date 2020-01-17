@@ -1,5 +1,5 @@
 resource "aws_s3_bucket_policy" "allow_object_write" {
-  bucket = "${aws_s3_bucket.dropOffBucket.id}"
+  bucket = aws_s3_bucket.dropOffBucket.id
 
   policy = <<POLICY
 {
