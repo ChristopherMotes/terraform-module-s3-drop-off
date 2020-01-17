@@ -4,7 +4,7 @@ resource "aws_s3_bucket_policy" "allow_object_write" {
   policy = <<POLICY
 {
   "Version": "2012-10-17",
-  "Id": "MYBUCKETPOLICY",
+  "Id": "${aws_s3_bucket.dropOffBucket.arn} Bucket Policy",
   "Statement": [
     {
       "Sid": "ResourceAllow",
